@@ -1,0 +1,80 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.listingSection {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 30px 0;
+}
+
+.listingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .listingGrid {
+    gap: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listingSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .listingGrid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .listingSection {
+    padding: 30px 0;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .listingGrid {
+    gap: 10px;
+  }
+}

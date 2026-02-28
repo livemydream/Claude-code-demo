@@ -1,0 +1,253 @@
+.featuredSection {
+  padding: 40px 0;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+  }
+
+  .arrows {
+    display: flex;
+    gap: 12px;
+
+    .arrowBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: white;
+      color: #666;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: #0056D2;
+        color: #0056D2;
+      }
+    }
+  }
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.cardList {
+  display: flex;
+  gap: 24px;
+  padding-bottom: 10px;
+}
+
+.card {
+  flex-shrink: 0;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rentedTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  background: #dc3545;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.imageActions {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+
+  .actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    color: #0056D2;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.content {
+  padding: 16px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.address {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0056D2;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .header {
+    .title {
+      font-size: 28px;
+    }
+  }
+
+  .card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredSection {
+    padding: 30px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    .title {
+      font-size: 24px;
+    }
+
+    .arrows {
+      .arrowBtn {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .card {
+    width: 260px;
+  }
+
+  .imageWrapper {
+    height: 170px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+
+  .address {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    .title {
+      font-size: 20px;
+    }
+  }
+
+  .card {
+    width: 240px;
+  }
+
+  .imageWrapper {
+    height: 150px;
+  }
+
+  .imageActions {
+    .actionBtn {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+}

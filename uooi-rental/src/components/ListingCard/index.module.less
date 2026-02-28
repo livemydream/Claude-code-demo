@@ -1,0 +1,287 @@
+.listingCard {
+  display: flex;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e8e8e8;
+  background: white;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 280px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.listingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  .listingCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.featuredTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 11px;
+  background: #dc3545;
+  color: white;
+  border: none;
+}
+
+.cardContent {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+
+    .title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0056D2;
+      margin: 0;
+      white-space: nowrap;
+
+      .period {
+        font-size: 14px;
+        font-weight: 500;
+        color: #888;
+      }
+    }
+  }
+
+  .address {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #888;
+    font-size: 14px;
+
+    .icon {
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+  }
+
+  .info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 14px;
+
+    .infoItem {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    :global {
+      .ant-rate {
+        font-size: 16px;
+      }
+    }
+
+    .ratingText {
+      font-size: 14px;
+      color: #888;
+      font-weight: 500;
+    }
+  }
+
+  .tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+
+    :global {
+      .ant-tag {
+        margin: 0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        background: #f0f8ff;
+        border-color: #d6e4ff;
+        color: #0056D2;
+      }
+    }
+  }
+}
+
+/* 响应式设计 - 平板模式改为垂直布局 */
+@media (max-width: 1024px) {
+  .listingCard {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 220px;
+  }
+
+  .cardContent {
+    .header {
+      .title {
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 20px;
+
+        .period {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .address {
+      font-size: 13px;
+    }
+
+    .info {
+      font-size: 13px;
+      gap: 12px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .listingCard {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 200px;
+  }
+
+  .cardContent {
+    padding: 16px;
+
+    .header {
+      margin-bottom: 10px;
+
+      .title {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 18px;
+
+        .period {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .address {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .info {
+      font-size: 13px;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .rating {
+      margin-bottom: 12px;
+
+      :global {
+        .ant-rate {
+          font-size: 14px;
+        }
+      }
+
+      .ratingText {
+        font-size: 13px;
+      }
+    }
+
+    .tags {
+      :global {
+        .ant-tag {
+          font-size: 11px;
+          padding: 3px 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 170px;
+  }
+
+  .cardContent {
+    padding: 12px;
+
+    .header {
+      .title {
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 16px;
+
+        .period {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .address {
+      font-size: 12px;
+    }
+
+    .info {
+      font-size: 12px;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.footer {
+  width: 100%;
+  background: #002b5c;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+}
+
+.brandSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 40px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .logoText {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+  }
+
+  .address,
+  .hours {
+    p {
+      margin: 0 0 4px 0;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.copyright {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .footerContent {
+    padding: 50px 24px 30px;
+  }
+
+  .brandSection {
+    gap: 40px;
+  }
+
+  .logo {
+    .logoText {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    padding: 40px 16px 24px;
+  }
+
+  .brandSection {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 30px;
+
+    .logo {
+      .logoText {
+        font-size: 22px;
+      }
+    }
+
+    .address,
+    .hours {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .copyright {
+    padding-top: 24px;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 30px 12px 20px;
+  }
+
+  .brandSection {
+    gap: 20px;
+    margin-bottom: 24px;
+
+    .logo {
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .logoText {
+        font-size: 20px;
+      }
+    }
+
+    .address,
+    .hours {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .copyright {
+    padding-top: 20px;
+
+    p {
+      font-size: 11px;
+    }
+  }
+}

@@ -1,0 +1,237 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  .logoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .logoTitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0056D2;
+      line-height: 1;
+    }
+
+    .logoSubtitle {
+      font-size: 11px;
+      font-weight: 500;
+      color: #666;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  .navLink {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+      color: #0056D2;
+    }
+
+    .dropdownIcon {
+      font-size: 11px;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .langBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: #0056D2;
+      color: #0056D2;
+    }
+
+    .langIcon {
+      font-size: 14px;
+    }
+  }
+
+  .userIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    background: white;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: #0056D2;
+      color: #0056D2;
+    }
+  }
+
+  .tenantsBtn {
+    height: 40px;
+    padding: 0 24px;
+    background: #0056D2;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #0047b3;
+    }
+
+    :global {
+      .ant-btn {
+        background: #0056D2;
+        border: none;
+        height: 40px;
+        padding: 0 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+
+        &:hover {
+          background: #0047b3;
+        }
+      }
+    }
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .navbarContent {
+    padding: 0 24px;
+  }
+
+  .navMenu {
+    gap: 20px;
+
+    .navLink {
+      font-size: 14px;
+    }
+  }
+
+  .actions {
+    gap: 12px;
+
+    .langBtn {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    .tenantsBtn {
+      padding: 0 16px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .navbarContent {
+    padding: 0 16px;
+  }
+
+  .logo {
+    gap: 8px;
+
+    .logoText {
+      .logoTitle {
+        font-size: 18px;
+      }
+
+      .logoSubtitle {
+        font-size: 9px;
+      }
+    }
+  }
+
+  .navMenu {
+    display: none;
+  }
+
+  .actions {
+    .langBtn {
+      display: none;
+    }
+
+    .userIcon {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+
+    .tenantsBtn {
+      padding: 0 12px;
+      font-size: 12px;
+      height: 36px;
+    }
+  }
+}

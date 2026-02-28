@@ -1,0 +1,11 @@
+{
+  "extends": "./node_modules/@umijs/max/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  }
+}

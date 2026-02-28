@@ -1,0 +1,153 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+
+  :global {
+    .slick-slider,
+    .slick-list {
+      height: 100%;
+    }
+
+    .slick-track {
+      height: 100%;
+    }
+  }
+}
+
+.carousel {
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slideBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.bannerText {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 900px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .banner:hover & {
+    opacity: 1;
+  }
+}
+
+.prevArrow {
+  left: 30px;
+}
+
+.nextArrow {
+  right: 30px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .banner {
+    height: 350px;
+  }
+
+  .slide {
+    height: 350px;
+  }
+
+  .bannerContent {
+    padding: 0 20px;
+  }
+
+  .bannerText {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .navArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    opacity: 1;
+  }
+
+  .prevArrow {
+    left: 12px;
+  }
+
+  .nextArrow {
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 280px;
+  }
+
+  .slide {
+    height: 280px;
+  }
+
+  .bannerText {
+    font-size: 22px;
+  }
+}

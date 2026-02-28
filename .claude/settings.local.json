@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(node -e \"const fs=require\\(''fs''\\);const d=JSON.parse\\(fs.readFileSync\\(''/dev/stdin'',''utf8''\\)\\);const t=d[0].text;console.log\\(t.substring\\(0,5000\\)\\);\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const t=j[0].text;const m=t.match\\(/name=\"\"[^\"\"]+\"\"/g\\);if\\(m\\){const s=new Set\\(m\\);console.log\\(Array.from\\(s\\).join\\(''\\\\n''\\)\\);}\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const t=j[0].text;const matches=t.match\\(/<text[^>]*>[^<]+<\\\\/text>/g\\);if\\(matches\\){matches.slice\\(0,50\\).forEach\\(m=>console.log\\(m\\)\\);}\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const t=j[0].text;console.log\\(t.substring\\(0,10000\\)\\);\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const t=j[0].text;console.log\\(t.substring\\(10000,30000\\)\\);\")",
+      "mcp__plugin_figma_figma__get_metadata",
+      "Bash(npx create-umi@latest uooi-rental --typescript)",
+      "mcp__plugin_figma_figma__whoami"
+    ]
+  }
+}
