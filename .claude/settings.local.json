@@ -11,7 +11,11 @@
       "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const t=j[0].text;console.log\\(t.substring\\(10000,30000\\)\\);\")",
       "mcp__plugin_figma_figma__get_metadata",
       "Bash(npx create-umi@latest uooi-rental --typescript)",
-      "mcp__plugin_figma_figma__whoami"
+      "mcp__plugin_figma_figma__whoami",
+      "mcp__figma-remote-mcp__get_design_context",
+      "mcp__figma-remote-mcp__get_screenshot",
+      "mcp__figma-remote-mcp__get_metadata",
+      "Bash(npm run dev)"
     ]
   }
 }

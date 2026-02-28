@@ -1,0 +1,367 @@
+// 外层页面容器
+.cover {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f4ed;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 设计容器 - 保持 Figma 原始尺寸 1720px x 1094px
+.designContainer {
+  position: relative;
+  width: 1720px;
+  height: 1094px;
+  flex-shrink: 0;
+  transform-origin: center center;
+}
+
+// 背景椭圆装饰
+.bgEllipse {
+  position: absolute;
+  left: -1166.77px;
+  top: -394.77px;
+  width: 1989.54px;
+  height: 2035.23px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgEllipseImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// 装饰图形组
+.decorGroup {
+  position: absolute;
+  left: 36.88px;
+  top: 238.65px;
+  width: 1320.84px;
+  height: 836.02px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decorGroupImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// Logo 区域
+.logoSection {
+  position: absolute;
+  left: 40.56px;
+  top: 374.31px;
+  width: 324.13px;
+  height: 85.2px;
+  z-index: 10;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 324.13px;
+  height: 77.06px;
+}
+
+.logoIcon1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 66.3px;
+  height: 77.06px;
+}
+
+.logoIcon2 {
+  position: absolute;
+  left: 88.56px;
+  top: 2.1px;
+  width: 235.57px;
+  height: 55.91px;
+}
+
+.logoText {
+  position: absolute;
+  left: 88.36px;
+  top: 64.27px;
+  width: 212.78px;
+  font-family: 'Gilroy-Medium', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 5.5px;
+  margin: 0;
+}
+
+// 标签按钮
+.tagButton {
+  position: absolute;
+  left: 60.67px;
+  top: 653.93px;
+  width: 230.46px;
+  height: 50.68px;
+  z-index: 10;
+}
+
+.tagBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #f3603f;
+  border-radius: 10px;
+}
+
+.tagText {
+  position: absolute;
+  left: 13.11px;
+  top: 12.14px;
+  font-family: 'Gilroy', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: normal;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+// 主标题
+.mainTitle {
+  position: absolute;
+  left: 60.67px;
+  top: 723.67px;
+  font-family: 'Sveningsson', 'Georgia', serif;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 71px;
+  color: #181725;
+  letter-spacing: 5.6px;
+  white-space: pre-wrap;
+  z-index: 10;
+
+  p {
+    margin: 0;
+  }
+}
+
+// 主要卡片（最前方，带绿色阴影）- 相对于 designContainer
+.cardMain {
+  position: absolute;
+  left: 650px;
+  top: 100px;
+  width: 617.49px;
+  height: 751.62px;
+  z-index: 100;
+}
+
+// 后层卡片容器 (Group 6863) - 向右偏移以居中显示
+.cardsContainer {
+  position: absolute;
+  left: -750px;
+  top: -650px;
+  width: 3463.38px;
+  height: 2457.31px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+// 通用卡片样式
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cardWrapper > div {
+  transform: rotate(-30deg);
+  flex-shrink: 0;
+}
+
+.cardInner,
+.cardInnerMask {
+  position: relative;
+  width: 317.9px;
+  height: 684.36px;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 1px 11px 65px 0px rgba(223, 213, 194, 0.95);
+}
+
+.cardInnerMask {
+  box-shadow: 1px 11px 65px 0px #7dba91;
+  mask-image: url('https://www.figma.com/api/mcp/asset/37e1bbf6-0f65-4c38-b52c-a6d23b84d1f1');
+  mask-size: 1989.54px 2035.23px;
+  mask-position: -1834.29px -1051.38px;
+  mask-repeat: no-repeat;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 35px;
+  display: block;
+}
+
+.cardMain .cardInner {
+  box-shadow: -30px 54px 87px 0px #7dba91;
+  overflow: visible;
+}
+
+.cardMain .cardImage {
+  position: absolute;
+  height: 173.83%;
+  width: auto;
+  left: 0;
+  top: 0.07%;
+}
+
+// 后层卡片 1 (6:55)
+.cardBack1 {
+  position: absolute;
+  left: 1163.1px;
+  top: 242.64px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+.cardBack1 .cardInner {
+  box-shadow: -30px 54px 87px 0px #dfd5c2;
+}
+
+// 后层卡片 2 (6:48)
+.cardBack2 {
+  position: absolute;
+  left: 704.26px;
+  top: 163.41px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// 后层卡片 3 (6:49)
+.cardBack3 {
+  position: absolute;
+  left: 1067.03px;
+  top: 791.74px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// 后层卡片 4 (6:50)
+.cardBack4 {
+  position: absolute;
+  left: 1527.58px;
+  top: 873.35px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// 后层卡片 5 (6:51)
+.cardBack5 {
+  position: absolute;
+  left: 802.47px;
+  top: -382.59px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+.cardBack5 .cardInner {
+  box-shadow: 1px 11px 65px 0px rgba(223, 213, 194, 0.9);
+}
+
+// 后层卡片 6 (6:52)
+.cardBack6 {
+  position: absolute;
+  left: 1313.21px;
+  top: -214.06px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// 后层卡片 7 (6:53)
+.cardBack7 {
+  position: absolute;
+  left: 1679.12px;
+  top: 419.72px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// Mask Group 卡片 (6:45)
+.cardMask {
+  position: absolute;
+  left: -1166.77px;
+  top: -394.77px;
+  width: 1989.54px;
+  height: 2035.23px;
+}
+
+// 后层卡片 8 (6:43)
+.cardBack8 {
+  position: absolute;
+  left: 546.92px;
+  top: 1323.09px;
+  width: 617.49px;
+  height: 751.62px;
+}
+
+// 响应式缩放
+@media (max-width: 1800px) {
+  .designContainer {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 1600px) {
+  .designContainer {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1400px) {
+  .designContainer {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 1200px) {
+  .designContainer {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 1024px) {
+  .designContainer {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 900px) {
+  .designContainer {
+    transform: scale(0.4);
+  }
+}
+
+@media (max-width: 700px) {
+  .designContainer {
+    transform: scale(0.35);
+  }
+}
+
+@media (max-width: 600px) {
+  .designContainer {
+    transform: scale(0.3);
+  }
+}

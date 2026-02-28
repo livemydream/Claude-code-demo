@@ -1,10 +1,12 @@
-# UOOI Rental - Claude Code 项目配置
+# CLAUDE.md
 
-## 项目概述
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
 
 **UOOI Rental** - 房源租赁管理平台，基于 UmiJS + React + TypeScript + Ant Design 构建。
 
-### 技术栈
+### Tech Stack
 
 | 技术 | 版本 | 用途 |
 |-----|------|-----|
@@ -14,51 +16,54 @@
 | Ant Design | 5.x | UI 组件库 |
 | Less | - | CSS 预处理器 |
 
-### 项目结构
+---
 
-```
-uooi-rental/
-├── src/
-│   ├── app.tsx                 # 根容器配置 (Ant Design ConfigProvider)
-│   ├── global.less             # 全局样式
-│   ├── types/                  # TypeScript 类型定义
-│   │   └── listing.ts          # 房源、筛选器、导航类型
-│   ├── components/             # 通用组件
-│   │   ├── Navbar/             # 导航栏
-│   │   ├── Banner/             # Banner 横幅
-│   │   ├── FilterBar/          # 筛选栏
-│   │   ├── ListingCard/        # 房源卡片
-│   │   ├── FeaturedListings/   # 精选房源列表
-│   │   └── Footer/             # 页脚
-│   └── pages/                  # 页面组件
-│       └── index/              # 首页
-├── .umirc.ts                   # UmiJS 配置
-├── tsconfig.json               # TypeScript 配置
-└── package.json                # 项目依赖
-```
+## Architecture
+
+### UmiJS-Specific Patterns
+
+1. **路由配置** - 在 `.umirc.ts` 中集中配置
+   ```typescript
+   routes: [
+     { path: '/', component: '@/pages/index' },
+   ]
+   ```
+
+2. **全局配置** - `src/app.tsx` 导出 `rootContainer` 函数包裹 Ant Design ConfigProvider
+   ```tsx
+   export function rootContainer(container: any) {
+     return <ConfigProvider locale={zhCN} theme={{...}}>{container}</ConfigProvider>;
+   }
+   ```
+
+3. **路径别名** - `@/` 映射到 `./src/`，在 `.umirc.ts` 中配置
+
+### Type Definitions
+
+- 共享类型放在 `src/types/` 目录
+- 主要类型：`Listing`（房源）、`FilterType`（筛选器）、`NavItem`（导航）
 
 ---
 
-## 开发规范
+## Development Standards
 
 ### 组件编写
 
-1. **组件结构** - 使用函数式组件 + Hooks
-```tsx
-import React from 'react';
-import styles from './index.module.less';
+1. **组件结构** - 函数式组件 + Hooks
+   ```tsx
+   import React from 'react';
+   import styles from './index.module.less';
 
-interface ComponentProps {
-  // 定义 props 类型
-}
+   interface ComponentProps {
+     // 定义 props 类型
+   }
 
-const Component = ({ prop }: ComponentProps) => {
-  // 组件逻辑
-  return <div className={styles.container}>...</div>;
-};
+   const Component = ({ prop }: ComponentProps) => {
+     return <div className={styles.container}>...</div>;
+   };
 
-export default Component;
-```
+   export default Component;
+   ```
 
 2. **组件文件组织**
    - 每个组件独立文件夹：`ComponentName/index.tsx`
@@ -66,77 +71,39 @@ export default Component;
    - Props 接口定义在组件文件内
 
 3. **导入顺序**
-```tsx
-// 1. React 相关
-import React, { useState } from 'react';
+   ```tsx
+   // 1. React 相关
+   import React, { useState } from 'react';
 
-// 2. 第三方库
-import { Button, Dropdown } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+   // 2. 第三方库
+   import { Button, Dropdown } from 'antd';
+   import { UserOutlined } from '@ant-design/icons';
 
-// 3. 类型导入
-import type { MenuProps } from 'antd';
-import type { Listing } from '@/types/listing';
+   // 3. 类型导入
+   import type { MenuProps } from 'antd';
+   import type { Listing } from '@/types/listing';
 
-// 4. 样式
-import styles from './index.module.less';
-```
+   // 4. 样式
+   import styles from './index.module.less';
+   ```
 
 ### 样式规范
 
-1. **使用 CSS Modules (Less)**
-```tsx
-import styles from './index.module.less';
-<div className={styles.container}>...</div>
-```
-
-2. **主题配置**
-   - 主色：`#0056D2`（UOOI 品牌色）或 `#1890ff`（Ant Design 默认）
-   - 圆角：`8px`
-   - 字体大小：`16px`
-   - 配置位置：`src/app.tsx` 和 `.umirc.ts`
-
-### 类型定义
-
-1. **共享类型** 放在 `src/types/` 目录
-2. **组件特定类型** 定义在组件文件内
-3. **使用 `type` 关键字导入类型**
-```tsx
-import type { Listing } from '@/types/listing';
-```
-
-### 路径别名
-
-- `@/` → `./src/`
-- 示例：`import type { Listing } from '@/types/listing';`
+- 使用 CSS Modules (Less)：`import styles from './index.module.less'`
+- 主题配置：`src/app.tsx` 中 ConfigProvider + `.umirc.ts` theme 配置
+- 主色：`#1890ff`，圆角：`8px`，字体：`16px`
 
 ---
 
-## 设计系统
-
-### 颜色
-
-| 用途 | 颜色值 |
-|-----|--------|
-| 主色 (Primary) | `#0056D2` / `#1890ff` |
-| 成功 | 绿色 (Ant Design 默认) |
-| 警告 | 橙色 (Ant Design 默认) |
-| 错误 | 红色 (Ant Design 默认) |
-
-### 组件库
-
-- **优先使用** Ant Design 组件 (`antd`)
-- **图标** 使用 `@ant-design/icons`
-- **主题** 已配置中文 locale (`zhCN`)
-
----
-
-## 命令
+## Commands
 
 | 命令 | 用途 |
 |-----|------|
 | `npm run dev` | 启动开发服务器 |
 | `npm run build` | 构建生产版本 |
+| `npm start` | 启动开发服务器（同 dev） |
+
+**工作目录**：项目位于 `uooi-rental/` 子目录
 
 ---
 
@@ -164,19 +131,6 @@ import type { Listing } from '@/types/listing';
 | `docs` | 文档更新 | `docs: 更新 README 说明` |
 | `config` | 配置文件修改 | `config: 更新 UmiJS 路由配置` |
 
-### 示例
-
-```bash
-# 简单提交
-git commit -m "feat: 添加房源详情页面"
-
-# 带描述的提交
-git commit -m "fix: 修复筛选器状态不同步问题
-
-- 修复价格筛选无法正确重置的问题
-- 添加筛选器状态持久化"
-```
-
 ---
 
 ## 注意事项
@@ -184,6 +138,5 @@ git commit -m "fix: 修复筛选器状态不同步问题
 1. **语言**：界面、代码注释、Git 提交信息均使用中文
 2. **图片资源**：当前使用 Unsplash 图片 URL
 3. **响应式**：注意移动端适配
-4. **代码风格**：保持与现有代码一致
-5. **TypeScript**：充分利用类型系统，避免使用 `any`
-6. **Git 提交**：commit 信息和描述必须使用中文
+4. **TypeScript**：充分利用类型系统，避免使用 `any`
+5. **组件库**：优先使用 Ant Design 组件，图标使用 `@ant-design/icons`
